@@ -1,13 +1,15 @@
 import { CalculateMetadataFunction, Composition, Folder } from "remotion";
 import { GroenRijkVideo, type GroenRijkVideoProps } from "./videos/GroenRijkVideo";
+import { controleerMerk } from "./merken/controle";
 import { maakTijdlijn } from "./videos/tijdlijn";
 import { twinklePole } from "./videos/twinkle-pole";
 import { voorbeeld } from "./videos/voorbeeld";
 import { voorbeeldOutlet } from "./videos/voorbeeld-outlet";
 
-const metLengte: CalculateMetadataFunction<GroenRijkVideoProps> = ({ props }) => ({
-  durationInFrames: maakTijdlijn(props.config, 30).totaal,
-});
+const metLengte: CalculateMetadataFunction<GroenRijkVideoProps> = ({ props }) => {
+  controleerMerk(props.config);
+  return { durationInFrames: maakTijdlijn(props.config, 30).totaal };
+};
 
 export const RemotionRoot: React.FC = () => {
   return (

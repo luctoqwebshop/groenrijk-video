@@ -17,7 +17,7 @@ export const twinklePole: VideoConfig = {
     { soort: "stap", bronSeconde: 27.3, duur: 2.6, nummer: 2, tekst: "Snoer van 5 meter tot het stopcontact" },
     { soort: "product", bronSeconde: 34.4, duur: 3.0, naam: "1,10 m × 38 cm" },
   ],
-  outro: { callToAction: "Nu in de winkel en online", webshop: "Tuincentrum Outlet" },
+  outro: { callToAction: "Nu in de winkel en online" },
   focus: { verticaal: "62% 35%", horizontaal: "50% 20%" },
   kerst: true,
 };

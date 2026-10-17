@@ -9,7 +9,7 @@ laadFont("Montserrat", "fonts/Montserrat-latin.woff2", ["700", "800", "900"]);
 export const outlet: Merk = {
   id: "outlet",
   naam: "Tuincentrum Outlet",
-  adresRegel: "Online en bij GroenRijk Tilburg",
+  adresRegel: "tuincentrumoutlet.com",
   slogan: "",
   kleuren: {
     primair: "#2F65B0",
