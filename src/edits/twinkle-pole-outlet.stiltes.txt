@@ -1,0 +1,18 @@
+frame=    0 fps=0.0 q=-0.0 size=       0kB time=00:00:00.12 bitrate=   0.0kbits/s speed=2.96x    frame=  124 fps=0.0 q=-0.0 size=N/A time=00:00:04.24 bitrate=N/A speed=7.79x    [silencedetect @ 0x55b162b9ab40] silence_start: 6.05652
+[silencedetect @ 0x55b162b9ab40] silence_end: 6.83021 | silence_duration: 0.773687
+frame=  246 fps=234 q=-0.0 size=N/A time=00:00:08.32 bitrate=N/A speed=7.92x    [silencedetect @ 0x55b162b9ab40] silence_start: 11.4325
+[silencedetect @ 0x55b162b9ab40] silence_end: 12.1122 | silence_duration: 0.679688
+frame=  378 fps=243 q=-0.0 size=N/A time=00:00:12.71 bitrate=N/A speed=8.18x    [silencedetect @ 0x55b162b9ab40] silence_start: 13.4957
+[silencedetect @ 0x55b162b9ab40] silence_end: 14.114 | silence_duration: 0.61825
+frame=  499 fps=242 q=-0.0 size=N/A time=00:00:16.74 bitrate=N/A speed=8.12x    [silencedetect @ 0x55b162b9ab40] silence_start: 18.266
+[silencedetect @ 0x55b162b9ab40] silence_end: 19.1523 | silence_duration: 0.886292
+frame=  628 fps=245 q=-0.0 size=N/A time=00:00:21.03 bitrate=N/A speed=8.21x    [silencedetect @ 0x55b162b9ab40] silence_start: 22.0408
+[silencedetect @ 0x55b162b9ab40] silence_end: 23.115 | silence_duration: 1.07423
+frame=  749 fps=244 q=-0.0 size=N/A time=00:00:25.06 bitrate=N/A speed=8.18x    [silencedetect @ 0x55b162b9ab40] silence_start: 26.3153
+[silencedetect @ 0x55b162b9ab40] silence_end: 27.221 | silence_duration: 0.905708
+frame=  874 fps=245 q=-0.0 size=N/A time=00:00:29.24 bitrate=N/A speed= 8.2x    [silencedetect @ 0x55b162b9ab40] silence_start: 30.634
+[silencedetect @ 0x55b162b9ab40] silence_end: 32.2365 | silence_duration: 1.60256
+frame=  999 fps=242 q=-0.0 size=N/A time=00:00:33.40 bitrate=N/A speed= 8.1x    frame= 1126 fps=243 q=-0.0 size=N/A time=00:00:37.65 bitrate=N/A speed=8.13x    [silencedetect @ 0x55b162b9ab40] silence_start: 38.5351
+[silencedetect @ 0x55b162b9ab40] silence_end: 39.5806 | silence_duration: 1.04542
+frame= 1266 fps=247 q=-0.0 size=N/A time=00:00:42.30 bitrate=N/A speed=8.24x    [silencedetect @ 0x55b162b9ab40] silence_start: 42.1563
+[silencedetect @ 0x55b162b9ab40] silence_end: 43.9013 | silence_duration: 1.74504

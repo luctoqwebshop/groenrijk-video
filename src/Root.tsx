@@ -3,6 +3,7 @@ import { GroenRijkVideo, type GroenRijkVideoProps } from "./videos/GroenRijkVide
 import { controleerMerk } from "./merken/controle";
 import { maakTijdlijn } from "./videos/tijdlijn";
 import { twinklePole } from "./videos/twinkle-pole";
+import { twinklePoleOutlet } from "./videos/twinkle-pole-outlet";
 import { voorbeeld } from "./videos/voorbeeld";
 import { voorbeeldOutlet } from "./videos/voorbeeld-outlet";
 
@@ -77,6 +78,28 @@ export const RemotionRoot: React.FC = () => {
           width={1920}
           height={1080}
           defaultProps={{ config: twinklePole }}
+          calculateMetadata={metLengte}
+        />
+      </Folder>
+      <Folder name="TwinklePole-Outlet">
+        <Composition
+          id="twinkle-pole-outlet-Verticaal"
+          component={GroenRijkVideo}
+          durationInFrames={300}
+          fps={30}
+          width={1080}
+          height={1920}
+          defaultProps={{ config: twinklePoleOutlet }}
+          calculateMetadata={metLengte}
+        />
+        <Composition
+          id="twinkle-pole-outlet-Horizontaal"
+          component={GroenRijkVideo}
+          durationInFrames={300}
+          fps={30}
+          width={1920}
+          height={1080}
+          defaultProps={{ config: twinklePoleOutlet }}
           calculateMetadata={metLengte}
         />
       </Folder>

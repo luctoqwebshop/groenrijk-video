@@ -1,0 +1,667 @@
+[
+  {
+    "text": "Een",
+    "startMs": 300,
+    "endMs": 359,
+    "timestampMs": 497,
+    "confidence": 0.98673
+  },
+  {
+    "text": " nieuw",
+    "startMs": 359,
+    "endMs": 683,
+    "timestampMs": 792,
+    "confidence": 0.995816
+  },
+  {
+    "text": " merk",
+    "startMs": 683,
+    "endMs": 998,
+    "timestampMs": 1145,
+    "confidence": 0.997368
+  },
+  {
+    "text": " op",
+    "startMs": 998,
+    "endMs": 1155,
+    "timestampMs": 1342,
+    "confidence": 0.998411
+  },
+  {
+    "text": " de",
+    "startMs": 1155,
+    "endMs": 1313,
+    "timestampMs": 1421,
+    "confidence": 0.999005
+  },
+  {
+    "text": " markt,",
+    "startMs": 1313,
+    "endMs": 1765,
+    "timestampMs": 1696,
+    "confidence": 0.995552
+  },
+  {
+    "text": " Twinkle",
+    "startMs": 1765,
+    "endMs": 2384,
+    "timestampMs": 2286,
+    "confidence": 0.790856
+  },
+  {
+    "text": " Pole,",
+    "startMs": 2384,
+    "endMs": 2895,
+    "timestampMs": 2876,
+    "confidence": 0.307686
+  },
+  {
+    "text": " verkrijgbaar",
+    "startMs": 2895,
+    "endMs": 3731,
+    "timestampMs": 3505,
+    "confidence": 0.980407
+  },
+  {
+    "text": " bij",
+    "startMs": 3731,
+    "endMs": 3908,
+    "timestampMs": 4016,
+    "confidence": 0.981487
+  },
+  {
+    "text": " GroenRijk",
+    "startMs": 3908,
+    "endMs": 4507,
+    "timestampMs": 4193,
+    "confidence": 0.96709
+  },
+  {
+    "text": " Tilburg",
+    "startMs": 4507,
+    "endMs": 4989,
+    "timestampMs": 4606,
+    "confidence": 0.971898
+  },
+  {
+    "text": " en",
+    "startMs": 4989,
+    "endMs": 5097,
+    "timestampMs": 5097,
+    "confidence": 0.980961
+  },
+  {
+    "text": " Tuincentrum",
+    "startMs": 5097,
+    "endMs": 5608,
+    "timestampMs": 5314,
+    "confidence": 0.647138
+  },
+  {
+    "text": " Outlet.",
+    "startMs": 5608,
+    "endMs": 6100,
+    "timestampMs": 5864,
+    "confidence": 0.884524
+  },
+  {
+    "text": " Je",
+    "startMs": 6800,
+    "endMs": 6905,
+    "timestampMs": 7467,
+    "confidence": 0.999794
+  },
+  {
+    "text": " kent",
+    "startMs": 6905,
+    "endMs": 7125,
+    "timestampMs": 7625,
+    "confidence": 0.998612
+  },
+  {
+    "text": " nog",
+    "startMs": 7125,
+    "endMs": 7291,
+    "timestampMs": 7818,
+    "confidence": 0.999895
+  },
+  {
+    "text": " wel",
+    "startMs": 7291,
+    "endMs": 7458,
+    "timestampMs": 8011,
+    "confidence": 0.999739
+  },
+  {
+    "text": " die",
+    "startMs": 7458,
+    "endMs": 7625,
+    "timestampMs": 8151,
+    "confidence": 0.990881
+  },
+  {
+    "text": " verlichte",
+    "startMs": 7625,
+    "endMs": 8116,
+    "timestampMs": 8292,
+    "confidence": 0.999622
+  },
+  {
+    "text": " kerstballen",
+    "startMs": 8116,
+    "endMs": 8713,
+    "timestampMs": 8695,
+    "confidence": 0.999169
+  },
+  {
+    "text": " die",
+    "startMs": 8713,
+    "endMs": 8879,
+    "timestampMs": 9169,
+    "confidence": 0.999784
+  },
+  {
+    "text": " je",
+    "startMs": 8879,
+    "endMs": 8985,
+    "timestampMs": 9257,
+    "confidence": 0.999226
+  },
+  {
+    "text": " in",
+    "startMs": 8985,
+    "endMs": 9125,
+    "timestampMs": 9397,
+    "confidence": 0.998856
+  },
+  {
+    "text": " iedere",
+    "startMs": 9125,
+    "endMs": 9634,
+    "timestampMs": 9537,
+    "confidence": 0.999539
+  },
+  {
+    "text": " straat",
+    "startMs": 9634,
+    "endMs": 9853,
+    "timestampMs": 9888,
+    "confidence": 0.999743
+  },
+  {
+    "text": " zag,",
+    "startMs": 9853,
+    "endMs": 10011,
+    "timestampMs": 10257,
+    "confidence": 0.999931
+  },
+  {
+    "text": " in",
+    "startMs": 10011,
+    "endMs": 10116,
+    "timestampMs": 10695,
+    "confidence": 0.998403
+  },
+  {
+    "text": " de",
+    "startMs": 10116,
+    "endMs": 10222,
+    "timestampMs": 10766,
+    "confidence": 0.999954
+  },
+  {
+    "text": " vlaggenstokhouder.",
+    "startMs": 10222,
+    "endMs": 11450,
+    "timestampMs": 10853,
+    "confidence": 0.972516
+  },
+  {
+    "text": " Twinkle",
+    "startMs": 12100,
+    "endMs": 12436,
+    "timestampMs": 12533,
+    "confidence": 0.997761
+  },
+  {
+    "text": " Pole",
+    "startMs": 12436,
+    "endMs": 12624,
+    "timestampMs": 12772,
+    "confidence": 0.997326
+  },
+  {
+    "text": " heeft",
+    "startMs": 12624,
+    "endMs": 12869,
+    "timestampMs": 12909,
+    "confidence": 0.999769
+  },
+  {
+    "text": " iets",
+    "startMs": 12869,
+    "endMs": 13103,
+    "timestampMs": 13011,
+    "confidence": 0.999973
+  },
+  {
+    "text": " nieuws,",
+    "startMs": 13103,
+    "endMs": 13450,
+    "timestampMs": 13137,
+    "confidence": 0.999866
+  },
+  {
+    "text": " namelijk",
+    "startMs": 14100,
+    "endMs": 14883,
+    "timestampMs": 14557,
+    "confidence": 0.999053
+  },
+  {
+    "text": " de",
+    "startMs": 14883,
+    "endMs": 14958,
+    "timestampMs": 15508,
+    "confidence": 0.999672
+  },
+  {
+    "text": " Snowflake,",
+    "startMs": 14958,
+    "endMs": 15751,
+    "timestampMs": 15751,
+    "confidence": 0.941524
+  },
+  {
+    "text": " Falling",
+    "startMs": 15751,
+    "endMs": 16301,
+    "timestampMs": 16665,
+    "confidence": 0.986152
+  },
+  {
+    "text": " Star",
+    "startMs": 16301,
+    "endMs": 16618,
+    "timestampMs": 17038,
+    "confidence": 0.839214
+  },
+  {
+    "text": " en",
+    "startMs": 16618,
+    "endMs": 16777,
+    "timestampMs": 17373,
+    "confidence": 0.999519
+  },
+  {
+    "text": " de",
+    "startMs": 16777,
+    "endMs": 16935,
+    "timestampMs": 17504,
+    "confidence": 0.999504
+  },
+  {
+    "text": " Double",
+    "startMs": 16935,
+    "endMs": 17420,
+    "timestampMs": 17765,
+    "confidence": 0.972128
+  },
+  {
+    "text": " Twister.",
+    "startMs": 17420,
+    "endMs": 18250,
+    "timestampMs": 17970,
+    "confidence": 0.983016
+  },
+  {
+    "text": " Een",
+    "startMs": 19100,
+    "endMs": 19329,
+    "timestampMs": 19880,
+    "confidence": 0.999907
+  },
+  {
+    "text": " nieuw",
+    "startMs": 19329,
+    "endMs": 19559,
+    "timestampMs": 20109,
+    "confidence": 0.999798
+  },
+  {
+    "text": " verlicht",
+    "startMs": 19559,
+    "endMs": 20025,
+    "timestampMs": 20338,
+    "confidence": 0.999397
+  },
+  {
+    "text": " object",
+    "startMs": 20025,
+    "endMs": 20353,
+    "timestampMs": 20705,
+    "confidence": 0.877487
+  },
+  {
+    "text": " voor",
+    "startMs": 20353,
+    "endMs": 20720,
+    "timestampMs": 21179,
+    "confidence": 0.990165
+  },
+  {
+    "text": " in",
+    "startMs": 20720,
+    "endMs": 20758,
+    "timestampMs": 21301,
+    "confidence": 0.987775
+  },
+  {
+    "text": " de",
+    "startMs": 20758,
+    "endMs": 20835,
+    "timestampMs": 21362,
+    "confidence": 0.999937
+  },
+  {
+    "text": " vlaggenstokhouder.",
+    "startMs": 20835,
+    "endMs": 22050,
+    "timestampMs": 21423,
+    "confidence": 0.999945
+  },
+  {
+    "text": " Hij",
+    "startMs": 23100,
+    "endMs": 23334,
+    "timestampMs": 23928,
+    "confidence": 0.999399
+  },
+  {
+    "text": " heeft",
+    "startMs": 23334,
+    "endMs": 23584,
+    "timestampMs": 24069,
+    "confidence": 0.999943
+  },
+  {
+    "text": " acht",
+    "startMs": 23584,
+    "endMs": 23819,
+    "timestampMs": 24288,
+    "confidence": 0.91137
+  },
+  {
+    "text": " verschillende",
+    "startMs": 23819,
+    "endMs": 24780,
+    "timestampMs": 24475,
+    "confidence": 0.99984
+  },
+  {
+    "text": " functies",
+    "startMs": 24780,
+    "endMs": 25084,
+    "timestampMs": 24834,
+    "confidence": 0.999493
+  },
+  {
+    "text": " en",
+    "startMs": 25084,
+    "endMs": 25209,
+    "timestampMs": 25491,
+    "confidence": 0.999907
+  },
+  {
+    "text": " een",
+    "startMs": 25209,
+    "endMs": 25381,
+    "timestampMs": 25616,
+    "confidence": 0.999954
+  },
+  {
+    "text": " timerfunctie.",
+    "startMs": 25381,
+    "endMs": 26350,
+    "timestampMs": 25944,
+    "confidence": 0.9841
+  },
+  {
+    "text": " De",
+    "startMs": 27200,
+    "endMs": 27443,
+    "timestampMs": 27702,
+    "confidence": 0.995036
+  },
+  {
+    "text": " adaptersnoer",
+    "startMs": 27443,
+    "endMs": 28153,
+    "timestampMs": 27962,
+    "confidence": 0.794602
+  },
+  {
+    "text": " is",
+    "startMs": 28153,
+    "endMs": 28292,
+    "timestampMs": 28517,
+    "confidence": 0.998799
+  },
+  {
+    "text": " 5",
+    "startMs": 28292,
+    "endMs": 28500,
+    "timestampMs": 28759,
+    "confidence": 0.665916
+  },
+  {
+    "text": " meter",
+    "startMs": 28500,
+    "endMs": 29063,
+    "timestampMs": 29071,
+    "confidence": 0.939008
+  },
+  {
+    "text": " lang",
+    "startMs": 29063,
+    "endMs": 29123,
+    "timestampMs": 29331,
+    "confidence": 0.998422
+  },
+  {
+    "text": " tot",
+    "startMs": 29123,
+    "endMs": 29331,
+    "timestampMs": 29799,
+    "confidence": 0.658023
+  },
+  {
+    "text": " aan",
+    "startMs": 29331,
+    "endMs": 29539,
+    "timestampMs": 29955,
+    "confidence": 0.997457
+  },
+  {
+    "text": " de",
+    "startMs": 29539,
+    "endMs": 29678,
+    "timestampMs": 30059,
+    "confidence": 0.922018
+  },
+  {
+    "text": " stopcontact.",
+    "startMs": 29678,
+    "endMs": 30700,
+    "timestampMs": 30250,
+    "confidence": 0.99659
+  },
+  {
+    "text": " De",
+    "startMs": 32200,
+    "endMs": 32444,
+    "timestampMs": 33453,
+    "confidence": 0.999832
+  },
+  {
+    "text": " afmeting",
+    "startMs": 32444,
+    "endMs": 33014,
+    "timestampMs": 33681,
+    "confidence": 0.999744
+  },
+  {
+    "text": " van",
+    "startMs": 33014,
+    "endMs": 33266,
+    "timestampMs": 34170,
+    "confidence": 0.999708
+  },
+  {
+    "text": " de",
+    "startMs": 33266,
+    "endMs": 33429,
+    "timestampMs": 34284,
+    "confidence": 0.955037
+  },
+  {
+    "text": " Twinkle",
+    "startMs": 33429,
+    "endMs": 34007,
+    "timestampMs": 34398,
+    "confidence": 0.938124
+  },
+  {
+    "text": " Pole",
+    "startMs": 34007,
+    "endMs": 34357,
+    "timestampMs": 34740,
+    "confidence": 0.997259
+  },
+  {
+    "text": " is",
+    "startMs": 34357,
+    "endMs": 34503,
+    "timestampMs": 35130,
+    "confidence": 0.999685
+  },
+  {
+    "text": " 1,10",
+    "startMs": 34503,
+    "endMs": 35415,
+    "timestampMs": 35472,
+    "confidence": 0.997025
+  },
+  {
+    "text": " meter",
+    "startMs": 35415,
+    "endMs": 35879,
+    "timestampMs": 35847,
+    "confidence": 0.932216
+  },
+  {
+    "text": " lang",
+    "startMs": 35879,
+    "endMs": 36164,
+    "timestampMs": 36579,
+    "confidence": 0.995095
+  },
+  {
+    "text": " bij",
+    "startMs": 36164,
+    "endMs": 36465,
+    "timestampMs": 37051,
+    "confidence": 0.984874
+  },
+  {
+    "text": " 38",
+    "startMs": 36465,
+    "endMs": 36913,
+    "timestampMs": 37540,
+    "confidence": 0.997862
+  },
+  {
+    "text": " centimeter",
+    "startMs": 36913,
+    "endMs": 37759,
+    "timestampMs": 37979,
+    "confidence": 0.876766
+  },
+  {
+    "text": " breed.",
+    "startMs": 37759,
+    "endMs": 38500,
+    "timestampMs": 38435,
+    "confidence": 0.999396
+  },
+  {
+    "text": " Hij",
+    "startMs": 39500,
+    "endMs": 39719,
+    "timestampMs": 40347,
+    "confidence": 0.999853
+  },
+  {
+    "text": " is",
+    "startMs": 39719,
+    "endMs": 39792,
+    "timestampMs": 40449,
+    "confidence": 0.999949
+  },
+  {
+    "text": " verkrijgbaar",
+    "startMs": 39792,
+    "endMs": 40493,
+    "timestampMs": 40610,
+    "confidence": 0.9995
+  },
+  {
+    "text": " online",
+    "startMs": 40493,
+    "endMs": 40763,
+    "timestampMs": 41165,
+    "confidence": 0.999928
+  },
+  {
+    "text": " en",
+    "startMs": 40763,
+    "endMs": 41085,
+    "timestampMs": 41501,
+    "confidence": 0.999842
+  },
+  {
+    "text": " bij",
+    "startMs": 41085,
+    "endMs": 41136,
+    "timestampMs": 41603,
+    "confidence": 0.99987
+  },
+  {
+    "text": " ons",
+    "startMs": 41136,
+    "endMs": 41311,
+    "timestampMs": 41749,
+    "confidence": 0.999649
+  },
+  {
+    "text": " in",
+    "startMs": 41311,
+    "endMs": 41435,
+    "timestampMs": 41837,
+    "confidence": 0.999931
+  },
+  {
+    "text": " de",
+    "startMs": 41435,
+    "endMs": 41545,
+    "timestampMs": 41866,
+    "confidence": 0.999855
+  },
+  {
+    "text": " winkel.",
+    "startMs": 41545,
+    "endMs": 42100,
+    "timestampMs": 41983,
+    "confidence": 0.999754
+  }
+]
