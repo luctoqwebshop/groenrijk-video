@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Zet een ruw filmpje klaar voor Remotion.
 # Gebruik: scripts/bereid-voor.sh <pad-naar-bron.MOV> <videonaam>
-# Maakt:  public/raw/<videonaam>.mp4   (H.264, 30 fps, korte zijde max 2160 voor 4K, stem genormaliseerd op -16 LUFS)
+# Maakt:  public/raw/<videonaam>.mp4   (H.264, 30 fps, originele resolutie behouden, stem genormaliseerd op -16 LUFS)
 #         public/raw/<videonaam>.wav   (16 kHz mono, voor Whisper)
 #         src/edits/<videonaam>.stiltes.txt (pauzes langer dan 0,6 s)
 set -euo pipefail
@@ -13,9 +13,9 @@ mkdir -p public/raw src/edits
 audiofilter="highpass=f=80,afftdn=nf=-25,loudnorm=I=-16:TP=-1.5:LRA=11"
 
 ffmpeg -y -hide_banner -loglevel error -i "$bron" \
-  -vf "scale='if(gt(iw,ih),-2,min(2160,iw))':'if(gt(iw,ih),min(2160,ih),-2)',fps=30" \
-  -c:v libx264 -preset medium -crf 16 -pix_fmt yuv420p \
-  -af "$audiofilter" -ar 48000 -c:a aac -b:a 192k \
+  -vf "fps=30" \
+  -c:v libx264 -preset medium -crf 12 -pix_fmt yuv420p \
+  -af "$audiofilter" -ar 48000 -c:a aac -b:a 320k \
   -movflags +faststart "public/raw/$naam.mp4"
 
 ffmpeg -y -hide_banner -loglevel error -i "public/raw/$naam.mp4" -ar 16000 -ac 1 -c:a pcm_s16le "public/raw/$naam.wav"

@@ -33,6 +33,13 @@ Tuin-, woon- en dierencentrum van Tilburg-Noord:
 - Logo's: `public/logo-groenrijk-transparant*.png` (lichte achtergrond), `public/logo-groenrijk-wit*.png` (donkergroen/video), `public/intro/` (groei-animatie). Nooit vervormen of herkleuren.
 - Watermerk klein rechtsboven, ~70% dekking. Ronde hoeken (16–24 px), zachte schaduwen, organische details spaarzaam.
 
+## Resolutie en kwaliteit (vast, afspraak met de gebruiker)
+- **Altijd de hoogst mogelijke resolutie en kwaliteit.** Eindvideo's in 4K: verticaal 2160x3840, horizontaal 3840x2160 (zit in `remotion.config.ts`: schaal 2, CRF 12, audio 320 kbps). Lever nooit een lagere resolutie als eindversie.
+- Het bronmateriaal wordt in de originele resolutie bewaard (`scripts/bereid-voor.sh`), nooit verkleind.
+- Controleer de eindbestanden met ffprobe (breedte x hoogte) en noem de resolutie in het verslag. Is de bron kleiner dan 4K, meld dat: dan is alleen de vormgeving echt 4K-scherp.
+- Gebruik logo's en afbeeldingen in de grootste beschikbare versie; vraag om een groter bestand als een logo in 4K zacht wordt.
+- Kleine kijkversies (~720p) zijn alleen extra, om in de chat te bekijken.
+
 ## Opbouw
 1. Hook (3 s): korte sterke zin op donkergroen, belangrijkste woord in limoen (`*woord*`)
 2. Intro (1,5 s): logo, het blad groeit met een spring-animatie
@@ -54,6 +61,7 @@ Woordgroepen van 3–5 woorden in Nunito Bold, wit op half doorzichtig donkergro
 | Black Friday, acties | energiek maar netjes: upbeat pop | 115–125 |
 
 ## Controlelijst
+- [ ] Eindvideo's in 4K (2160x3840 en 3840x2160), gecontroleerd met ffprobe
 - [ ] `merk: "groenrijk"`; niets van Tuincentrum Outlet in de toegevoegde vormgeving (ruwe beelden en gesproken tekst ongewijzigd)
 - [ ] GroenRijk-logo onvervormd, juiste variant per achtergrond
 - [ ] Outro met logo, "Weet wat er leeft", adres en call-to-action

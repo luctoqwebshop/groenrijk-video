@@ -21,8 +21,8 @@ Gebruik de Remotion-skills in `.claude/skills/` (begin bij `remotion-best-practi
 
 ## Formaten
 Per video twee composities: `<videonaam>-Verticaal` (ontwerp 1080x1920, 30 fps) en `<videonaam>-Horizontaal` (ontwerp 1920x1080, 30 fps).
-- **Eindvideo's altijd in 4K (afspraak met de gebruiker):** `remotion.config.ts` rendert met `setScale(2)`, dus verticaal 2160x3840 en horizontaal 3840x2160. Ontwerp en veilige zones blijven in de 1080-maten hieronder. Controleer na het renderen met ffprobe dat de uitvoer echt 4K is.
-- Bronbeelden worden door `scripts/bereid-voor.sh` tot maximaal 2160 px (korte zijde) bewaard. Is de bron kleiner dan 4K (bijv. 1080p), meld dat in het verslag: het beeld wordt dan opgeschaald, alleen de vormgeving is echt 4K-scherp.
+- **Altijd de hoogst mogelijke resolutie en kwaliteit (afspraak met de gebruiker):** eindvideo's in 4K. `remotion.config.ts` rendert met `setScale(2)` (verticaal 2160x3840, horizontaal 3840x2160), CRF 12 en audio 320 kbps. Ontwerp en veilige zones blijven in de 1080-maten hieronder. Controleer na het renderen met ffprobe dat de uitvoer echt 4K is.
+- Bronbeelden worden door `scripts/bereid-voor.sh` in de originele resolutie bewaard, nooit verkleind. Is de bron kleiner dan 4K (bijv. 1080p), meld dat in het verslag: het beeld wordt dan opgeschaald, alleen de vormgeving is echt 4K-scherp.
 - Kijkversies blijven klein (~720p) om in de chat te bekijken.
 - Veilige zones verticaal: geen tekst in de bovenste 250 px, onderste 350 px en rechterrand 120 px.
 - `<OffthreadVideo>` voor bronmateriaal, `objectFit: cover`, gezicht/product in beeld houden via `focus` in de config.
@@ -46,7 +46,7 @@ Per video twee composities: `<videonaam>-Verticaal` (ontwerp 1080x1920, 30 fps) 
 5. Bepaal cuts: haal stiltes, "eh"'s, versprekingen en mislukte takes weg; pauzes > 0,6 s inkorten. Niet knippen vanwege een merknaam. Social: bij voorkeur 30–60 s.
 6. Schrijf de config (met `merk`): hook, stappen/tips, focus, muziek.
 7. Render stills (`npx remotion still`) van hook, een ondertitel, een stap-label en de outro en controleer ze zelf.
-8. Render in 4K: `npx remotion render <videonaam>-Verticaal out/<videonaam>-verticaal-4k.mp4 --crf=18` en idem horizontaal (de 4K-schaal staat in `remotion.config.ts`). Renderen duurt ongeveer 4x zo lang als in 1080p.
+8. Render in 4K: `npx remotion render <videonaam>-Verticaal out/<videonaam>-verticaal-4k.mp4` en idem horizontaal; geef geen lagere `--crf` of `--scale` mee (de 4K-schaal staat in `remotion.config.ts`). Renderen duurt ongeveer 4x zo lang als in 1080p.
 9. Kort verslag: wat je gedaan hebt plus twijfels.
 
 **Automatische modus (afgesproken met de gebruiker):** geen akkoordstap tussendoor, alles in één keer maken; de gebruiker kijkt achteraf. Draait alleen als de gebruiker erom vraagt (geen schema).
@@ -76,6 +76,7 @@ Zelf gemaakt met ffmpeg in `public/sfx/`: `pop` (stap, 25–35%), `whoosh` (over
 
 ## Controlelijst voor oplevering
 - [ ] Juiste merk en de controlelijst uit de merkprompt afgewerkt
+- [ ] Eindvideo's in 4K, hoogste kwaliteit, gecontroleerd met ffprobe
 - [ ] Niets van het andere merk in de toegevoegde vormgeving (logo, kleuren, fonts, hook, labels, outro); ruwe beelden en gesproken tekst ongewijzigd
 - [ ] Ondertitels gecontroleerd en correct gespeld
 - [ ] Geen tekst buiten de veilige zones

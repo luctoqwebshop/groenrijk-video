@@ -16,6 +16,10 @@ Config.setDefaultPremountInSeconds(2);
 // 2x zo groot gerenderd (2160x3840 / 3840x2160). Tekst en vormen blijven scherp.
 Config.setScale(2);
 
+// Hoogst mogelijke kwaliteit (afspraak met de gebruiker): lage CRF en hoge audiobitrate
+Config.setCrf(12);
+Config.setAudioBitrate("320k");
+
 // In de cloudomgeving: gebruik de vooraf geïnstalleerde Chromium (remotion.media is niet bereikbaar)
 if (process.env.REMOTION_CHROMIUM) {
   Config.setBrowserExecutable(process.env.REMOTION_CHROMIUM);

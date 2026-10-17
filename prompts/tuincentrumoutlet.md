@@ -23,6 +23,13 @@ Jij bent de video-editor en Remotion-ontwikkelaar voor Tuincentrum Outlet (https
 - Logo's: `public/merken/outlet/logo-op-licht.png` (blauw, op wit) en `logo-op-donker.png` (wit, op blauw/video). Nooit vervormen of herkleuren. Het huidige bronbestand is klein (411 px); vraag om een groter bestand.
 - Watermerk klein rechtsboven, ~70% dekking. Strakke vlakken met afgeronde hoeken.
 
+## Resolutie en kwaliteit (vast, afspraak met de gebruiker)
+- **Altijd de hoogst mogelijke resolutie en kwaliteit.** Eindvideo's in 4K: verticaal 2160x3840, horizontaal 3840x2160 (zit in `remotion.config.ts`: schaal 2, CRF 12, audio 320 kbps). Lever nooit een lagere resolutie als eindversie.
+- Het bronmateriaal wordt in de originele resolutie bewaard (`scripts/bereid-voor.sh`), nooit verkleind.
+- Controleer de eindbestanden met ffprobe (breedte x hoogte) en noem de resolutie in het verslag. Is de bron kleiner dan 4K, meld dat: dan is alleen de vormgeving echt 4K-scherp.
+- Gebruik logo's en afbeeldingen in de grootste beschikbare versie; vraag om een groter bestand als een logo in 4K zacht wordt.
+- Kleine kijkversies (~720p) zijn alleen extra, om in de chat te bekijken.
+
 ## Opbouw
 1. Hook (3 s): korte zin op blauw, belangrijkste woord in de accentkleur (`*woord*`)
 2. Intro (1,5 s): het Outlet-logo veert in beeld op blauw
@@ -42,6 +49,7 @@ Woordgroepen van 3–5 woorden in Montserrat ExtraBold, wit op half doorzichtig 
 | Overige producten | modern en positief: lichte corporate pop | 100–115 |
 
 ## Controlelijst
+- [ ] Eindvideo's in 4K (2160x3840 en 3840x2160), gecontroleerd met ffprobe
 - [ ] `merk: "outlet"`; niets van GroenRijk in de toegevoegde vormgeving (ruwe beelden en gesproken tekst ongewijzigd)
 - [ ] Outlet-logo onvervormd, juiste variant per achtergrond
 - [ ] Outro met Outlet-logo, webadres en call-to-action
