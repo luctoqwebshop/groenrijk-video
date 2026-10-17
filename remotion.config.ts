@@ -11,3 +11,8 @@ Config.setRspack(true);
 Config.setVideoImageFormat("jpeg");
 Config.setOverwriteOutput(true);
 Config.setDefaultPremountInSeconds(2);
+
+// In de cloudomgeving: gebruik de vooraf geïnstalleerde Chromium (remotion.media is niet bereikbaar)
+if (process.env.REMOTION_CHROMIUM) {
+  Config.setBrowserExecutable(process.env.REMOTION_CHROMIUM);
+}
