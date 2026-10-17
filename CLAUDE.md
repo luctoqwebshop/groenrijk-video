@@ -20,7 +20,10 @@ Gebruik de Remotion-skills in `.claude/skills/` (begin bij `remotion-best-practi
 - Een nieuw merk: maak `src/merken/<merk>.ts` (type `Merk`), voeg het toe in `src/merken/index.tsx` en `src/merken/controle.ts`, en schrijf `prompts/<merk>.md`.
 
 ## Formaten
-Per video twee composities: `<videonaam>-Verticaal` (1080x1920, 30 fps) en `<videonaam>-Horizontaal` (1920x1080, 30 fps).
+Per video twee composities: `<videonaam>-Verticaal` (ontwerp 1080x1920, 30 fps) en `<videonaam>-Horizontaal` (ontwerp 1920x1080, 30 fps).
+- **Eindvideo's altijd in 4K (afspraak met de gebruiker):** `remotion.config.ts` rendert met `setScale(2)`, dus verticaal 2160x3840 en horizontaal 3840x2160. Ontwerp en veilige zones blijven in de 1080-maten hieronder. Controleer na het renderen met ffprobe dat de uitvoer echt 4K is.
+- Bronbeelden worden door `scripts/bereid-voor.sh` tot maximaal 2160 px (korte zijde) bewaard. Is de bron kleiner dan 4K (bijv. 1080p), meld dat in het verslag: het beeld wordt dan opgeschaald, alleen de vormgeving is echt 4K-scherp.
+- Kijkversies blijven klein (~720p) om in de chat te bekijken.
 - Veilige zones verticaal: geen tekst in de bovenste 250 px, onderste 350 px en rechterrand 120 px.
 - `<OffthreadVideo>` voor bronmateriaal, `objectFit: cover`, gezicht/product in beeld houden via `focus` in de config.
 - Nooit meer dan één tekstelement tegelijk naast de ondertiteling.
@@ -43,7 +46,7 @@ Per video twee composities: `<videonaam>-Verticaal` (1080x1920, 30 fps) en `<vid
 5. Bepaal cuts: haal stiltes, "eh"'s, versprekingen en mislukte takes weg; pauzes > 0,6 s inkorten. Niet knippen vanwege een merknaam. Social: bij voorkeur 30–60 s.
 6. Schrijf de config (met `merk`): hook, stappen/tips, focus, muziek.
 7. Render stills (`npx remotion still`) van hook, een ondertitel, een stap-label en de outro en controleer ze zelf.
-8. Render: `npx remotion render <videonaam>-Verticaal out/<videonaam>-verticaal.mp4 --crf=18` en idem horizontaal.
+8. Render in 4K: `npx remotion render <videonaam>-Verticaal out/<videonaam>-verticaal-4k.mp4 --crf=18` en idem horizontaal (de 4K-schaal staat in `remotion.config.ts`). Renderen duurt ongeveer 4x zo lang als in 1080p.
 9. Kort verslag: wat je gedaan hebt plus twijfels.
 
 **Automatische modus (afgesproken met de gebruiker):** geen akkoordstap tussendoor, alles in één keer maken; de gebruiker kijkt achteraf. Draait alleen als de gebruiker erom vraagt (geen schema).
