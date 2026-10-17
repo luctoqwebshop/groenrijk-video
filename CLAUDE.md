@@ -8,7 +8,9 @@ Dit project maakt afgewerkte video's voor **twee aparte merken**. Ze worden stri
 - Is niet duidelijk voor welk merk de video is? **Vraag het eerst**, gok niet.
 - Lees de merkprompt volledig voordat je begint. Die gaat voor op alles hieronder als ze elkaar tegenspreken.
 
-**Nooit mengen:** in een GroenRijk-video staat niets van Tuincentrum Outlet, en in een Outlet-video niets van GroenRijk. Dat geldt voor logo, naam, adres, webadres, slogan, kleuren, lettertypes, hook, labels, ondertitels en outro. Noemt de spreker het andere merk, knip die zin eruit. `src/merken/controle.ts` stopt het renderen bij zichtbare tekst van het andere merk en waarschuwt bij gesproken tekst.
+**Nooit mengen in de vormgeving:** alles wat jij toevoegt volgt alleen het gekozen merk: logo, naam, adres, webadres, slogan, kleuren, lettertypes, hook, labels en outro. In een GroenRijk-video voeg je niets van Tuincentrum Outlet toe, en andersom. `src/merken/controle.ts` stopt het renderen als zichtbare toegevoegde tekst naar het andere merk verwijst.
+
+**Ruwe video niet aanpassen voor het merk (afspraak met de gebruiker):** knip geen merknamen uit wat er gezegd wordt en werk geen logo's in beeld weg (bijv. op een shirt). De ondertitels volgen letterlijk wat er gezegd wordt, ook als het andere merk genoemd wordt. Gewone cuts (stiltes, pauzes, versprekingen, mislukte takes) blijven wel.
 
 Gebruik de Remotion-skills in `.claude/skills/` (begin bij `remotion-best-practices`).
 
@@ -38,7 +40,7 @@ Per video twee composities: `<videonaam>-Verticaal` (1080x1920, 30 fps) en `<vid
 2. `scripts/bereid-voor.sh <bron> <videonaam>` – H.264, 30 fps, stem op -16 LUFS met lichte ruisonderdrukking, 16 kHz wav, stiltelijst
 3. `node scripts/transcribeer.mjs <videonaam>` – whisper.cpp large-v3-turbo, taal `nl`
 4. Controleer en verbeter de transcriptie (plant- en productnamen). Verander nooit de inhoud of het advies.
-5. Bepaal cuts: haal stiltes, "eh"'s, versprekingen, mislukte takes en vermeldingen van het andere merk weg; pauzes > 0,6 s inkorten. Social: bij voorkeur 30–60 s.
+5. Bepaal cuts: haal stiltes, "eh"'s, versprekingen en mislukte takes weg; pauzes > 0,6 s inkorten. Niet knippen vanwege een merknaam. Social: bij voorkeur 30–60 s.
 6. Schrijf de config (met `merk`): hook, stappen/tips, focus, muziek.
 7. Render stills (`npx remotion still`) van hook, een ondertitel, een stap-label en de outro en controleer ze zelf.
 8. Render: `npx remotion render <videonaam>-Verticaal out/<videonaam>-verticaal.mp4 --crf=18` en idem horizontaal.
@@ -71,7 +73,7 @@ Zelf gemaakt met ffmpeg in `public/sfx/`: `pop` (stap, 25–35%), `whoosh` (over
 
 ## Controlelijst voor oplevering
 - [ ] Juiste merk en de controlelijst uit de merkprompt afgewerkt
-- [ ] Niets van het andere merk in beeld, tekst of ondertitels
+- [ ] Niets van het andere merk in de toegevoegde vormgeving (logo, kleuren, fonts, hook, labels, outro); ruwe beelden en gesproken tekst ongewijzigd
 - [ ] Ondertitels gecontroleerd en correct gespeld
 - [ ] Geen tekst buiten de veilige zones
 - [ ] Muziek instrumentaal, rechtenvrij en in `BRONNEN.md`

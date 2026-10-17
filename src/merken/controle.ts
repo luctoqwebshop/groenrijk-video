@@ -7,9 +7,8 @@ const verboden: Record<MerkId, RegExp> = {
   outlet: /groen\s*rijk/i,
 };
 
-// Gooit een fout als zichtbare tekst in de config naar het andere merk verwijst.
-// In de ondertitels (gesproken tekst) geeft het alleen een waarschuwing: die tekst passen we niet aan,
-// maar zo'n zin kan wel uit de video geknipt worden.
+// Gooit een fout als zichtbare toegevoegde tekst in de config naar het andere merk verwijst.
+// De gesproken tekst (ondertitels) wordt niet gecontroleerd: de ruwe video passen we niet aan voor het merk.
 export const controleerMerk = (config: VideoConfig) => {
   const patroon = verboden[config.merk];
   const teksten = [
@@ -23,9 +22,5 @@ export const controleerMerk = (config: VideoConfig) => {
   const fout = teksten.find((t) => patroon.test(t));
   if (fout) {
     throw new Error(`Merkfout (${config.merk}): "${fout}" verwijst naar een ander merk.`);
-  }
-  const gesproken = config.captions.map((c) => c.text).join("");
-  if (patroon.test(gesproken)) {
-    console.warn(`Let op (${config.merk}): in de gesproken tekst wordt een ander merk genoemd. Knip die zin eruit.`);
   }
 };
