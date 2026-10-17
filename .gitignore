@@ -8,3 +8,5 @@ out
 whisper.cpp/
 out/
 node_modules/
+bron/
+public/raw/

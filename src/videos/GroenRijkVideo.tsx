@@ -153,7 +153,7 @@ export const GroenRijkVideo: React.FC<GroenRijkVideoProps> = ({ config }) => {
       ) : null}
 
       {config.ambient ? (
-        <Sequence name="Ambient" from={0} durationInFrames={t.inhoudStart + OVERGANG}>
+        <Sequence name="Ambient" durationInFrames={t.inhoudStart + OVERGANG}>
           <Audio
             src={sfx.ritselen}
             volume={(f) =>
