@@ -20,8 +20,15 @@ Tuin-, woon- en dierencentrum van Tilburg-Noord:
 - Alle tekst in het Nederlands, spreek de kijker aan met "je"
 - Geen opgeklopte reclametaal; liever een tip die echt helpt
 
-## Huisstijl (vast)
-- Kleuren staan in `src/brand.ts` (`groenDonker` #005634, `groenLimoen` #91BE06, `wit`, `creme` #F7F5EC, `tekstDonker` #1F2A22). Nergens anders losse hex-codes.
+## Merken
+Elke video kiest in de config `merk: "groenrijk"` of `merk: "outlet"`. Logo, kleuren, lettertypes, intro en outro volgen daar automatisch uit (`src/merken/`).
+- **GroenRijk Tilburg** (`src/merken/groenrijk.ts`): alles hieronder onder "Huisstijl".
+- **Tuincentrum Outlet** (`src/merken/outlet.ts`, website https://www.tuincentrumoutlet.com/): blauw #2F65B0 uit het logo, Montserrat (zwaar, strak), logo's in `public/merken/outlet/` (gemaakt met `scripts/logo-outlet.py`). Toon: voordelig en direct, maar netjes; geen schreeuwerige reclametaal. Accentkleur (nu voorlopig geel), slogan en outro-tekst nog bevestigen aan de hand van de website.
+- Componenten gebruiken alleen de rollen uit `useMerk()` (primair, accent, opPrimair, opAccent, licht, tekstDonker). Nergens losse hex-codes buiten `src/merken/`.
+- Een nieuw merk toevoegen: maak `src/merken/<merk>.ts` (type `Merk`) en voeg het toe in `src/merken/index.tsx`.
+
+## Huisstijl GroenRijk (vast)
+- Kleuren staan in `src/merken/groenrijk.ts` (`groenDonker` #005634, `groenLimoen` #91BE06, `wit`, `creme` #F7F5EC, `tekstDonker` #1F2A22). Nergens anders losse hex-codes.
 - Nooit limoen tekst op wit. Limoen op donkergroen, of als vlak achter donkere tekst.
 - Fonts: Nunito (ExtraBold koppen, Bold ondertitels/labels) en Caveat (alleen slogan en korte accenten zoals "Tip!"). Ze staan lokaal in `public/fonts/` (Google Fonts-bestanden), want Chromium in de cloud vertrouwt de proxy niet voor fonts.gstatic.com.
 - Logo's in `public/`: `logo-groenrijk-transparant*.png` (lichte achtergrond), `logo-groenrijk-wit*.png` (donkergroen/video), `logo-icoon.png`, en `public/intro/` (lagen voor de groei-animatie). Gemaakt met `scripts/logo-varianten.py`. Nooit vervormen of herkleuren.
@@ -40,7 +47,7 @@ Per video twee composities: `<videonaam>-Verticaal` (1080x1920, 30 fps) en `<vid
 4. Outro (3,5 s): logo, "Weet wat er leeft" in Caveat, adres, call-to-action; webshop alleen als relevant
 
 ## Projectstructuur
-- `src/brand.ts` – huisstijl, veilige zones, sfx-paden
+- `src/merken/` – per merk kleuren, fonts, logo's en outro-gegevens; `src/brand.ts` – gedeelde vormgeving, veilige zones, sfx-paden
 - `src/components/` – `Hook`, `Intro`, `Outro`, `Captions`, `StapLabel`, `ProductLabel`, `TipBadge`, `Watermerk`, `LangzameZoom`
 - `src/videos/GroenRijkVideo.tsx` – sjabloon; `src/videos/types.ts` – `VideoConfig`; `src/videos/<videonaam>.ts` – config per video
 - `src/edits/<videonaam>.ts` – cuts (fragmenten in seconden van het bronbestand)
@@ -93,7 +100,7 @@ Zelf gemaakt met ffmpeg in `public/sfx/`: `pop` (stap, 25–35%), `whoosh` (over
 - Google Drive-connector: zoeken, mappen en verplaatsen werkt; downloaden via de connector kan maar tot 10 MB. Video's ophalen met curl via `drive.usercontent.google.com` (bestand of map moet gedeeld zijn met "Iedereen met de link").
 
 ## Controlelijst voor oplevering
-- [ ] Alleen kleuren uit `brand.ts`, Nunito en Caveat correct geladen
+- [ ] Juiste merk in de config; alleen kleuren en fonts uit `src/merken/`
 - [ ] Logo onvervormd, juiste variant per achtergrond
 - [ ] Ondertitels gecontroleerd en correct gespeld
 - [ ] Geen tekst buiten de veilige zones

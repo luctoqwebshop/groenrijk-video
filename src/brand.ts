@@ -1,18 +1,5 @@
-import { loadFont } from "@remotion/fonts";
+// Gedeelde vormgeving voor alle merken. Merkkleuren, fonts en logo's staan in src/merken/.
 import { staticFile, useVideoConfig } from "remotion";
-
-// Huisstijl GroenRijk. Gebruik in de rest van het project nergens losse hex-codes.
-export const kleuren = {
-  groenDonker: "#005634",
-  groenLimoen: "#91BE06",
-  wit: "#FFFFFF",
-  creme: "#F7F5EC",
-  tekstDonker: "#1F2A22",
-} as const;
-
-// Donkergroen met transparantie, voor vlakken over video
-export const groenDonkerTransparant = (dekking: number) =>
-  `rgba(0, 86, 52, ${dekking})`;
 
 export const schaduw = {
   zacht: "0 12px 32px rgba(31, 42, 34, 0.22)",
@@ -22,49 +9,6 @@ export const schaduw = {
 export const radius = {
   klein: 16,
   groot: 24,
-} as const;
-
-// Nunito en Caveat van Google Fonts, lokaal opgeslagen in public/fonts/ zodat het renderen
-// niet van het netwerk afhangt. Nunito is een variabel lettertype (700 en 800 uit één bestand).
-const NUNITO = "Nunito";
-const CAVEAT = "Caveat";
-for (const gewicht of ["700", "800"]) {
-  loadFont({
-    family: NUNITO,
-    url: staticFile("fonts/Nunito-latin.woff2"),
-    weight: gewicht,
-    format: "woff2",
-  });
-}
-loadFont({
-  family: CAVEAT,
-  url: staticFile("fonts/Caveat-latin.woff2"),
-  weight: "700",
-  format: "woff2",
-});
-
-export const fonts = {
-  // Koppen: 800 (ExtraBold), ondertitels en labels: 700 (Bold)
-  nunito: NUNITO,
-  // Alleen voor de slogan en korte accenten zoals "Tip!"
-  caveat: CAVEAT,
-} as const;
-
-export const logo = {
-  // Kleurenlogo met slogan, transparant, voor lichte achtergronden
-  kleur: staticFile("logo-groenrijk-transparant.png"),
-  kleurZonderSlogan: staticFile("logo-groenrijk-transparant-zonder-slogan.png"),
-  // Donkergroen vervangen door wit, voor donkergroene achtergronden en video
-  wit: staticFile("logo-groenrijk-wit.png"),
-  witZonderSlogan: staticFile("logo-groenrijk-wit-zonder-slogan.png"),
-  // Alleen de cirkel met het blad
-  icoon: staticFile("logo-icoon.png"),
-  // Verhoudingen (breedte / hoogte) van de bestanden, om vervorming te voorkomen
-  verhouding: {
-    metSlogan: 915 / 241,
-    zonderSlogan: 915 / 182,
-    icoon: 1,
-  },
 } as const;
 
 export const sfx = {
@@ -85,12 +29,6 @@ export const sfxVolume = {
   tik: 0.25,
   belletjes: 0.3,
   ambient: 0.12,
-} as const;
-
-export const bedrijf = {
-  naam: "GroenRijk Tilburg",
-  adres: "Stokhasseltlaan 39, Tilburg-Noord",
-  slogan: "Weet wat er leeft",
 } as const;
 
 export type Formaat = "verticaal" | "horizontaal";

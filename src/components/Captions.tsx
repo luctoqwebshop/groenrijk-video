@@ -1,6 +1,7 @@
 import type { Caption } from "@remotion/captions";
 import { interpolate, useCurrentFrame, useVideoConfig } from "remotion";
-import { fonts, groenDonkerTransparant, kleuren, radius, schaduw, tekstGrootte, useFormaat } from "../brand";
+import { radius, schaduw, tekstGrootte, useFormaat } from "../brand";
+import { useMerk } from "../merken";
 import { zachteSpring } from "./Animatie";
 
 type Groep = {
@@ -49,6 +50,7 @@ export type CaptionsProps = {
 };
 
 export const Captions: React.FC<CaptionsProps> = ({ captions, bronStartMs }) => {
+  const m = useMerk();
   const frame = useCurrentFrame();
   const { fps, width } = useVideoConfig();
   const { verticaal, zone, formaat } = useFormaat();
@@ -81,16 +83,16 @@ export const Captions: React.FC<CaptionsProps> = ({ captions, bronStartMs }) => 
       <div
         style={{
           maxWidth: verticaal ? width - zone.links - zone.rechts : 1400,
-          backgroundColor: groenDonkerTransparant(0.82),
+          backgroundColor: m.primairTransparant(0.82),
           borderRadius: radius.klein + 4,
           boxShadow: schaduw.zacht,
           padding: verticaal ? "16px 30px 20px" : "12px 28px 16px",
-          fontFamily: fonts.nunito,
-          fontWeight: 700,
+          fontFamily: m.fonts.tekst,
+          fontWeight: m.fonts.tekstGewicht,
           fontSize: tekstGrootte[formaat].ondertitel,
           lineHeight: 1.2,
           textAlign: "center",
-          color: kleuren.wit,
+          color: m.kleuren.opPrimair,
           opacity: interpolate(pop, [0, 1], [0, 1]),
           scale: interpolate(pop, [0, 1], [0.9, 1]),
         }}
@@ -100,7 +102,7 @@ export const Captions: React.FC<CaptionsProps> = ({ captions, bronStartMs }) => 
           return (
             <span
               key={`${w.startMs}-${i}`}
-              style={{ color: actief ? kleuren.groenLimoen : kleuren.wit, whiteSpace: "pre-wrap" }}
+              style={{ color: actief ? m.kleuren.accent : m.kleuren.opPrimair, whiteSpace: "pre-wrap" }}
             >
               {i === 0 ? w.text.trimStart() : w.text}
             </span>

@@ -1,5 +1,6 @@
 import { interpolate, useCurrentFrame, useVideoConfig } from "remotion";
-import { fonts, kleuren, labelTop, radius, schaduw, tekstGrootte, useFormaat } from "../brand";
+import { labelTop, radius, schaduw, tekstGrootte, useFormaat } from "../brand";
+import { useMerk } from "../merken";
 import { zachteSpring } from "./Animatie";
 
 export type StapLabelProps = {
@@ -10,6 +11,7 @@ export type StapLabelProps = {
 // Donkergroen tekstvak met het stapnummer in een limoen rondje.
 // Staat bovenin het beeld, zodat de ondertiteling onderin vrij blijft.
 export const StapLabel: React.FC<StapLabelProps> = ({ nummer, tekst }) => {
+  const m = useMerk();
   const frame = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
   const { verticaal, zone, formaat } = useFormaat();
@@ -32,7 +34,7 @@ export const StapLabel: React.FC<StapLabelProps> = ({ nummer, tekst }) => {
         display: "flex",
         alignItems: "center",
         gap: 24,
-        backgroundColor: kleuren.groenDonker,
+        backgroundColor: m.kleuren.primair,
         borderRadius: radius.groot,
         boxShadow: schaduw.zacht,
         padding: verticaal ? "22px 36px 22px 22px" : "18px 34px 18px 18px",
@@ -46,10 +48,10 @@ export const StapLabel: React.FC<StapLabelProps> = ({ nummer, tekst }) => {
           width: rondje,
           height: rondje,
           borderRadius: rondje / 2,
-          backgroundColor: kleuren.groenLimoen,
-          color: kleuren.groenDonker,
-          fontFamily: fonts.nunito,
-          fontWeight: 800,
+          backgroundColor: m.kleuren.accent,
+          color: m.kleuren.opAccent,
+          fontFamily: m.fonts.kop,
+          fontWeight: m.fonts.kopGewicht,
           fontSize: rondje * 0.56,
           display: "flex",
           justifyContent: "center",
@@ -61,14 +63,14 @@ export const StapLabel: React.FC<StapLabelProps> = ({ nummer, tekst }) => {
       </div>
       <div
         style={{
-          fontFamily: fonts.nunito,
-          fontWeight: 800,
+          fontFamily: m.fonts.kop,
+          fontWeight: m.fonts.kopGewicht,
           fontSize: g.label,
           lineHeight: 1.2,
-          color: kleuren.wit,
+          color: m.kleuren.opPrimair,
         }}
       >
-        <span style={{ color: kleuren.groenLimoen }}>Stap {nummer}: </span>
+        <span style={{ color: m.kleuren.accent }}>Stap {nummer}: </span>
         {tekst}
       </div>
     </div>

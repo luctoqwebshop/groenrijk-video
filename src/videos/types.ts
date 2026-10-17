@@ -1,4 +1,5 @@
 import type { Caption } from "@remotion/captions";
+import type { MerkId } from "../merken";
 
 // Een stuk uit het ruwe materiaal dat in de video blijft (seconden in het bronbestand)
 export type Fragment = {
@@ -21,10 +22,13 @@ export type Muziek = {
 };
 
 export type VideoConfig = {
+  // Bepaalt logo, kleuren, lettertypes en outro (zie src/merken/)
+  readonly merk: MerkId;
   // Bestand in public/raw/ (bij voorkeur de versie met genormaliseerd geluid)
   readonly bron: string;
   readonly hook: string;
-  readonly introAchtergrond: "wit" | "groenDonker";
+  // Leeg = de standaard van het merk
+  readonly introAchtergrond?: "licht" | "primair";
   readonly fragmenten: Fragment[];
   readonly captions: Caption[];
   readonly overlays: Overlay[];

@@ -1,5 +1,6 @@
 import { interpolate, useCurrentFrame, useVideoConfig } from "remotion";
-import { fonts, kleuren, labelTop, radius, schaduw, tekstGrootte, useFormaat } from "../brand";
+import { labelTop, radius, schaduw, tekstGrootte, useFormaat } from "../brand";
+import { useMerk } from "../merken";
 import { zachteSpring } from "./Animatie";
 
 export type TipBadgeProps = {
@@ -9,6 +10,7 @@ export type TipBadgeProps = {
 };
 
 export const TipBadge: React.FC<TipBadgeProps> = ({ accent, tekst }) => {
+  const m = useMerk();
   const frame = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
   const { verticaal, zone, formaat } = useFormaat();
@@ -37,10 +39,10 @@ export const TipBadge: React.FC<TipBadgeProps> = ({ accent, tekst }) => {
           top: verticaal ? -52 : -46,
           left: 24,
           zIndex: 1,
-          backgroundColor: kleuren.groenLimoen,
-          color: kleuren.groenDonker,
-          fontFamily: fonts.caveat,
-          fontWeight: 700,
+          backgroundColor: m.kleuren.accent,
+          color: m.kleuren.opAccent,
+          fontFamily: m.fonts.accent,
+          fontWeight: m.fonts.accentGewicht,
           fontSize: verticaal ? 72 : 64,
           lineHeight: 1,
           padding: "6px 26px 10px",
@@ -54,14 +56,14 @@ export const TipBadge: React.FC<TipBadgeProps> = ({ accent, tekst }) => {
       </div>
       <div
         style={{
-          backgroundColor: kleuren.creme,
-          color: kleuren.tekstDonker,
-          fontFamily: fonts.nunito,
-          fontWeight: 800,
+          backgroundColor: m.kleuren.licht,
+          color: m.kleuren.tekstDonker,
+          fontFamily: m.fonts.kop,
+          fontWeight: m.fonts.kopGewicht,
           fontSize: g.label,
           lineHeight: 1.25,
           borderRadius: radius.groot,
-          borderLeft: `12px solid ${kleuren.groenDonker}`,
+          borderLeft: `12px solid ${m.kleuren.primair}`,
           boxShadow: schaduw.zacht,
           padding: verticaal ? "46px 36px 28px" : "40px 34px 24px",
         }}

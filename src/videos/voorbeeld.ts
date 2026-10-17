@@ -6,7 +6,7 @@ import type { VideoConfig } from "./types";
 export const voorbeeld: VideoConfig = {
   bron: "raw/voorbeeld-testbeeld.mp4",
   hook: "Zo houd je je *olijfboom* de hele winter mooi 🌿",
-  introAchtergrond: "wit",
+  merk: "groenrijk",
   fragmenten,
   captions,
   overlays: [

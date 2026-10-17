@@ -6,7 +6,8 @@ import type { VideoConfig } from "./types";
 export const twinklePole: VideoConfig = {
   bron: "raw/twinkle-pole.mp4",
   hook: "Iets nieuws voor in je *vlaggenstokhouder*",
-  introAchtergrond: "groenDonker",
+  merk: "groenrijk",
+  introAchtergrond: "primair",
   fragmenten,
   captions,
   overlays: [

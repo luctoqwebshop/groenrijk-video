@@ -1,5 +1,6 @@
 import { AbsoluteFill, Img, interpolate, useCurrentFrame, useVideoConfig } from "remotion";
-import { bedrijf, fonts, kleuren, logo, radius, schaduw, useFormaat } from "../brand";
+import { radius, schaduw, useFormaat } from "../brand";
+import { useMerk } from "../merken";
 import { zachteSpring } from "./Animatie";
 
 export type OutroProps = {
@@ -14,6 +15,7 @@ const opkomst = (p: number, afstand = 24): React.CSSProperties => ({
 });
 
 export const Outro: React.FC<OutroProps> = ({ callToAction, webshop }) => {
+  const m = useMerk();
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const { verticaal, zone } = useFormaat();
@@ -24,7 +26,7 @@ export const Outro: React.FC<OutroProps> = ({ callToAction, webshop }) => {
   return (
     <AbsoluteFill
       style={{
-        backgroundColor: kleuren.groenDonker,
+        backgroundColor: m.kleuren.primair,
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
@@ -33,45 +35,47 @@ export const Outro: React.FC<OutroProps> = ({ callToAction, webshop }) => {
         paddingBottom: zone.onder,
         paddingLeft: zone.links,
         paddingRight: zone.rechts,
-        fontFamily: fonts.nunito,
-        color: kleuren.wit,
+        fontFamily: m.fonts.tekst,
+        color: m.kleuren.opPrimair,
         textAlign: "center",
       }}
     >
       <Img
-        src={logo.witZonderSlogan}
+        src={m.logo.zonderSlogan}
         style={{
           width: logoBreedte,
-          height: logoBreedte / logo.verhouding.zonderSlogan,
+          height: logoBreedte / m.logo.zonderSloganVerhouding,
           ...opkomst(s(0), 16),
           scale: interpolate(s(0), [0, 1], [0.94, 1]),
         }}
       />
+      {m.slogan ? (
+        <div
+          style={{
+            fontFamily: m.fonts.accent,
+            fontWeight: m.fonts.accentGewicht,
+            fontSize: verticaal ? 104 : 96,
+            lineHeight: 1,
+            color: m.kleuren.accent,
+            marginTop: verticaal ? -8 : -12,
+            ...opkomst(s(8)),
+          }}
+        >
+          {m.slogan}
+        </div>
+      ) : null}
       <div
         style={{
-          fontFamily: fonts.caveat,
-          fontWeight: 700,
-          fontSize: verticaal ? 104 : 96,
-          lineHeight: 1,
-          color: kleuren.groenLimoen,
-          marginTop: verticaal ? -8 : -12,
-          ...opkomst(s(8)),
-        }}
-      >
-        {bedrijf.slogan}
-      </div>
-      <div
-        style={{
-          fontWeight: 700,
+          fontWeight: m.fonts.tekstGewicht,
           fontSize: verticaal ? 44 : 38,
           lineHeight: 1.35,
           marginTop: verticaal ? 28 : 12,
           ...opkomst(s(16)),
         }}
       >
-        {bedrijf.naam}
+        {m.naam}
         <br />
-        {bedrijf.adres}
+        {m.adresRegel}
         {webshop ? (
           <>
             <br />
@@ -82,9 +86,9 @@ export const Outro: React.FC<OutroProps> = ({ callToAction, webshop }) => {
       <div
         style={{
           marginTop: verticaal ? 24 : 12,
-          backgroundColor: kleuren.groenLimoen,
-          color: kleuren.groenDonker,
-          fontWeight: 800,
+          backgroundColor: m.kleuren.accent,
+          color: m.kleuren.opAccent,
+          fontWeight: m.fonts.kopGewicht,
           fontSize: verticaal ? 50 : 42,
           padding: verticaal ? "22px 44px" : "18px 40px",
           borderRadius: radius.groot * 2,

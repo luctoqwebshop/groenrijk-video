@@ -1,5 +1,6 @@
 import { AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig } from "remotion";
-import { fonts, kleuren, tekstGrootte, useFormaat } from "../brand";
+import { tekstGrootte, useFormaat } from "../brand";
+import { useMerk } from "../merken";
 import { zachteSpring } from "./Animatie";
 
 export type HookProps = {
@@ -15,6 +16,7 @@ const woorden = (tekst: string) =>
     .map((w) => ({ woord: w.replace(/\*/g, ""), accent: w.includes("*") }));
 
 export const Hook: React.FC<HookProps> = ({ tekst }) => {
+  const m = useMerk();
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const { verticaal, zone } = useFormaat();
@@ -24,7 +26,7 @@ export const Hook: React.FC<HookProps> = ({ tekst }) => {
   return (
     <AbsoluteFill
       style={{
-        backgroundColor: kleuren.groenDonker,
+        backgroundColor: m.kleuren.primair,
         justifyContent: "center",
         alignItems: "center",
         paddingTop: zone.boven,
@@ -35,11 +37,11 @@ export const Hook: React.FC<HookProps> = ({ tekst }) => {
     >
       <div
         style={{
-          fontFamily: fonts.nunito,
-          fontWeight: 800,
+          fontFamily: m.fonts.kop,
+          fontWeight: m.fonts.kopGewicht,
           fontSize: grootte,
           lineHeight: 1.15,
-          color: kleuren.wit,
+          color: m.kleuren.opPrimair,
           textAlign: "center",
           maxWidth: verticaal ? 860 : 1500,
           textWrap: "balance",
@@ -53,7 +55,7 @@ export const Hook: React.FC<HookProps> = ({ tekst }) => {
               style={{
                 display: "inline-block",
                 marginRight: "0.25em",
-                color: accent ? kleuren.groenLimoen : kleuren.wit,
+                color: accent ? m.kleuren.accent : m.kleuren.opPrimair,
                 opacity: p,
                 translate: `0px ${interpolate(p, [0, 1], [28, 0])}px`,
               }}

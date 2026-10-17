@@ -10,7 +10,8 @@ import {
   staticFile,
   useVideoConfig,
 } from "remotion";
-import { kleuren, sfx, sfxVolume, useFormaat } from "../brand";
+import { sfx, sfxVolume, useFormaat } from "../brand";
+import { MerkProvider, useMerk } from "../merken";
 import { Captions } from "../components/Captions";
 import { Hook } from "../components/Hook";
 import { Intro } from "../components/Intro";
@@ -58,10 +59,11 @@ const overlayGeluid = (overlay: Overlay, kerst: boolean) => {
 const Inhoud: React.FC<{ readonly config: VideoConfig }> = ({ config }) => {
   const { fps } = useVideoConfig();
   const { formaat } = useFormaat();
+  const m = useMerk();
   const tijdlijn = maakTijdlijn(config, fps);
 
   return (
-    <AbsoluteFill style={{ backgroundColor: kleuren.groenDonker }}>
+    <AbsoluteFill style={{ backgroundColor: m.kleuren.primair }}>
       <Series>
         {tijdlijn.fragmenten.map((f, i) => (
           <Series.Sequence key={i} name={`Fragment ${i + 1}`} durationInFrames={f.frames}>
@@ -97,8 +99,9 @@ const Inhoud: React.FC<{ readonly config: VideoConfig }> = ({ config }) => {
   );
 };
 
-export const GroenRijkVideo: React.FC<GroenRijkVideoProps> = ({ config }) => {
+const VideoInhoud: React.FC<GroenRijkVideoProps> = ({ config }) => {
   const { fps } = useVideoConfig();
+  const m = useMerk();
   const t = maakTijdlijn(config, fps);
   const overgang = linearTiming({ durationInFrames: OVERGANG });
 
@@ -123,7 +126,7 @@ export const GroenRijkVideo: React.FC<GroenRijkVideoProps> = ({ config }) => {
   };
 
   return (
-    <AbsoluteFill style={{ backgroundColor: kleuren.groenDonker }}>
+    <AbsoluteFill style={{ backgroundColor: m.kleuren.primair }}>
       <TransitionSeries>
         <TransitionSeries.Sequence name="Hook" durationInFrames={t.hook}>
           <Hook tekst={config.hook} />
@@ -191,3 +194,10 @@ export const GroenRijkVideo: React.FC<GroenRijkVideoProps> = ({ config }) => {
     </AbsoluteFill>
   );
 };
+
+// Eén sjabloon voor alle merken: het merk uit de config bepaalt de huisstijl
+export const GroenRijkVideo: React.FC<GroenRijkVideoProps> = ({ config }) => (
+  <MerkProvider merk={config.merk}>
+    <VideoInhoud config={config} />
+  </MerkProvider>
+);
